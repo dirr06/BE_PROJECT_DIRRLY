@@ -4,11 +4,7 @@ import dotenv from "dotenv";
 import db from "./config/database.js";
 import bodyParser from "body-parser";
 import './models/index.js'
-import routerAuth from "./routes/authRoute.js";
-import routerBooking from "./routes/bookingRoute.js";
-import routerFlight from "./routes/flightRoute.js";
-import routerTicket from "./routes/ticketRoute.js";
-
+import router from './routes/Routes.js'
 dotenv.config();
 
 // await db.sync({force: true})
@@ -22,10 +18,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}))
-app.use( routerAuth);
-app.use( routerBooking);
-app.use( routerFlight);
-app.use( routerTicket);
+app.use(router) 
 
 
 
