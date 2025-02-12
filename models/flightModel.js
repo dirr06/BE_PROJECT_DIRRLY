@@ -27,6 +27,10 @@ const Flight = db.define('Flights', {
     price: {
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+    imageUrl: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 }, {
     tableName: 'flights',
